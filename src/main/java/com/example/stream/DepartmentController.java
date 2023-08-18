@@ -29,7 +29,7 @@ public class DepartmentController  {
     public Map<Integer, List<Employee>> groupByDept() {
         return service.groupByDept();
     }
-    @GetMapping("/full")
+    @GetMapping("/ful")
     public List<Employee> findAllByDept(@RequestParam int departId) {
         return service.findAllByDept(departId);
     }

@@ -1,6 +1,8 @@
 package com.example.stream;
 
 import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Collection;
@@ -12,6 +14,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public EmployeeServiceImpl() {
         this.employess = new HashMap<>();
+    }
+    @PostConstruct
+    private void init(){
+        employess.put("ivan_ivanov", new Employee("Ivan", "Ivanov", "asfasf", 1, 24125));
+        employess.put("Akakyi_ivanov", new Employee("Akakiy", "Ivanov", "asfasf", 1, 136516));
+        employess.put("Egor_ivanov", new Employee("Egor", "Ivanov", "asfasf", 3, 351616));
+        employess.put("Aleksey_ivanov", new Employee("Aleksey", "Glotov", "asfasf", 2, 35562));
     }
 
 @Override
