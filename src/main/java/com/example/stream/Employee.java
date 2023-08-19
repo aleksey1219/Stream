@@ -1,6 +1,10 @@
 package com.example.stream;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Objects;
+
+import static org.apache.commons.lang3.StringUtils.*;
 
 public class Employee {
     private String name;
@@ -12,8 +16,8 @@ public class Employee {
     private static int idCounter;
 
     public Employee(String name, String surname, String patronymic, int department, int salary) {
-        this.name = name;
-        this.surname = surname;
+        this.name = capitalize(name.toLowerCase());
+        this.surname = capitalize(surname.toLowerCase());
         this.patronymic = patronymic;
         this.department = department;
         if (salary >= 0) {

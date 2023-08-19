@@ -14,5 +14,9 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+    @GetMapping("/add")
+    public Employee add(@RequestParam String name,@RequestParam String lastName,@RequestParam String patronomic,@RequestParam int departament,@RequestParam int salary) {
+        return employeeService.addEmploee( name,  lastName,  patronomic,  departament,  salary);
+    }
 
 }
